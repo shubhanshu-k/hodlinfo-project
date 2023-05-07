@@ -1,10 +1,17 @@
-const express = require("express");
-const axios = require("axios");
-const cors = require("cors");
-require("./db/config.js");
-const Crypto = require("./db/crypto.js");
-const routes = require("./Routes/Routes");
-const path = require('path');
+import express from 'express';
+import Connection from './db/config.js';
+import cors from 'cors';
+import axios from 'axios';
+import crypto from './db/crypto.js';
+import routes from './Routes/Routes.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 const app = express();
 
 app.use(express.json());
@@ -38,10 +45,10 @@ async function getPosts() {
     console.log(filtered_data[i]);
   }
   const firstTen = filtered_data.slice(0, 10);
-  Crypto.insertMany(firstTen);
+  crypto.insertMany(firstTen);
 }
 
-
+Connection();
 app.listen(5000, () => {
   console.log("Application started and Listening on port 5000");
 });
@@ -51,4 +58,3 @@ app.use('/',routes);
 app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, 'index.html'));
 });
-

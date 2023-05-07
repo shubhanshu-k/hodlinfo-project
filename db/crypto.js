@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const cryptoSchema = new mongoose.Schema({
     "name":"String",
     "last":"Number",
@@ -6,4 +6,7 @@ const cryptoSchema = new mongoose.Schema({
     "sell": "Number",
     "buy": "Number"
 });
-module.exports = mongoose.model("hodlinfodb",cryptoSchema);
+
+const crypto = mongoose.model('hodlinfodb', cryptoSchema);
+export default crypto;
+
