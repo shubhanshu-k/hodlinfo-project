@@ -57,6 +57,4 @@ app.listen(5000, () => {
 
 getPosts();
 app.use('/',routes);
-app.get('*', function (request, response) {
-  response.sendFile(path.resolve(__dirname, 'index.html'));
-});
+app.use(express.static(path.join(__dirname, 'public')));

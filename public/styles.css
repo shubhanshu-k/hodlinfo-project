@@ -1,0 +1,57 @@
+.nabar {
+    height: 40px;
+    width: 100%;
+    background-color: #191d28;
+    justify-content: center;
+     margin-bottom: 20px;
+     margin-top: 20px;
+  }
+  .table {
+justify-content: center;
+text-align: center;
+align-items: center;
+margin-top: 70px;
+margin-bottom: 100px;
+border:none;
+border-collapse: collapse;
+  }
+
+  #my-table{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:auto;
+  }
+
+  #my-table th{
+    color: grey;
+    margin: 40px;
+    border:none;
+  }
+  #my-table td{
+    color:white;
+    align-items: center;
+    margin: 10px;
+    background-color: gray;
+    border-left: none;
+    border-right: none;
+  }
+  #my-table tr{
+    border-left: none;
+    border-right: none;
+    margin-bottom: 60px;
+  }
+  
+  .logo-img {
+    width: 120px;
+    height: 30px;
+    
+  }
+  .logo {
+    height: 35px;
+    width: 120px;
+  }
+  body {
+      background-color: #191d28;
+    }
+  
