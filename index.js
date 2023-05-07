@@ -45,7 +45,9 @@ async function getPosts() {
     console.log(filtered_data[i]);
   }
   const firstTen = filtered_data.slice(0, 10);
-  crypto.insertMany(firstTen);
+  //crypto.insertMany(firstTen);//
+  await crypto.deleteMany({});
+ await crypto.insertMany(firstTen);
 }
 
 Connection();
